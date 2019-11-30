@@ -15,7 +15,8 @@ RUN mkdir -p $HOME/.local/bin
 # Install haskell ide engine
 RUN git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules \
     && cd haskell-ide-engine \
-    && stack ./install.hs hie-8.4.4 \
+    && stack setup \
+    && stack ./install.hs all \
     && stack ./install.hs build-data
 
 # Clean up
